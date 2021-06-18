@@ -15,6 +15,7 @@ public class CameraFollow : MonoBehaviour
     
     private void FixedUpdate()
     {
-        transform.position = followingObject.transform.position + offset;
+        float zPosition = offset.z + followingObject.transform.position.z;
+        transform.position = new Vector3(transform.position.x, transform.position.y, zPosition);
     }
 }
