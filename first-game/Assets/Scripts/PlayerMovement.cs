@@ -11,13 +11,17 @@ public class PlayerMovement : MonoBehaviour
         forwardMovement();
         movementLeftRight();
     }
-
+    
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Obstacle")
         {
             forwardMovementSpeedPoints = 0;
             sidewaysMovementSpeedNewtons = 0.000f;
+        }
+        if (collision.gameObject.tag == "Camera change")
+        {
+            Debug.Log("enter");
         }
     }
 
